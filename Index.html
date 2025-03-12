@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JANISSARIES Insurance Agency | Join Our Team</title>
+    <style>
+        /* Color scheme changed to blue, green, and yellow */
+        :root {
+            --primary: #003087; /* Deep blue */
+            --secondary: #005f73; /* Teal/green */
+            --accent: #ffd166; /* Yellow */
+            --light: #f0f7ff; /* Light blue tint */
+            --dark: #001d3d; /* Dark blue */
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #FFFFFF;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        .logo img {
+            height: 100%;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .main-banner {
+            height: 80vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .banner-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+        
+        .banner-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+        
+        .features {
+            padding: 5rem 10%;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-top: 3px solid var(--secondary);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .positions {
+            padding: 5rem 10%;
+            background-color: var(--light);
+        }
+        
+        .position-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .position-card h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .position-card p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .position-card .details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .position-card .details span {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .position-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .position-description h4 {
+            margin: 1rem 0 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .position-description ul {
+            padding-left: 1.5rem;
+        }
+        
+        .apply-now {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .apply-now:hover {
+            background-color: var(--secondary);
+        }
+        
+        .testimonials {
+            padding: 5rem 10%;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .testimonial-card p::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            color: rgba(0, 95, 115, 0.1);
+        }
+        
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .testimonial-card .position {
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        
+        .about-us {
+            padding: 5rem 10%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 10% 1rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .application-form {
+            padding: 5rem 10%;
+            background-color: var(--light);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .submit-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .banner-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .position-card .details {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Form status messages */
+        .form-status {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .form-status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .form-status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <!-- Placeholder for your logo -->
+                <div style="font-size: 32px; font-weight: bold; color: var(--accent);">JN</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Team Stories</a></li>
+                    <li><a href="#apply">Apply Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="main-banner" id="home">
+        <div class="banner-content">
+            <h1>JOIN THE JANISSARIES</h1>
+            <p>Build your insurance career with a company that values excellence, integrity, and innovation. We're currently seeking talented Insurance Producers and Appointment Setters to join our team.</p>
+            <a href="#careers" class="cta-button">EXPLORE CAREERS</a>
+        </div>
+    </section>
+    
+    <section class="features">
+        <h2 class="section-title">Why Join JANISSARIES?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Unlimited Income Potential</h3>
+                <p>Competitive commission structure with uncapped earning potential, plus bonuses and incentives that reward your success.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Comprehensive Training</h3>
+                <p>Industry-leading training program that will prepare you for success in insurance sales, whether you're experienced or new to the industry.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Growth Opportunities</h3>
+                <p>Clear path for advancement with mentorship from top producers and leadership development programs.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Work-Life Balance</h3>
+                <p>Flexible scheduling options that allow you to build your business while maintaining personal time.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Cutting-Edge Technology</h3>
+                <p>Access to the latest insurance industry tools and software to streamline your sales process and maximize efficiency.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Supportive Team Culture</h3>
+                <p>Join a collaborative environment where your success is everyone's priority and teamwork drives results.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="positions" id="careers">
+        <h2 class="section-title">Current Openings</h2>
+        <div class="position-cards">
+            <div class="position-card">
+                <h3>Insurance Producer</h3>
+                <p>Take your sales career to the next level by helping clients protect what matters most to them with customized insurance solutions.</p>
+                
+                <div class="position-description">
+                    <h4>Responsibilities:</h4>
+                    <ul>
+                        <li>Generate new business through prospecting, networking, and referrals</li>
+                        <li>Conduct personalized insurance needs analyses for clients</li>
+                        <li>Develop and present customized insurance solutions</li>
+                        <li>Build and maintain long-term client relationships</li>
+                        <li>Meet or exceed monthly sales goals</li>
+                        <li>Stay current on industry trends, products, and regulations</li>
+                    </ul>
+                    
+                    <h4>Qualifications:</h4>
+                    <ul>
+                        <li>Current state insurance license or ability to obtain one within 90 days</li>
+                        <li>Sales experience preferred but not required</li>
+                        <li>Excellent communication and interpersonal skills</li>
+                        <li>Self-motivated with a strong work ethic</li>
+                        <li>Ability to build trust and relationships quickly</li>
+                        <li>Passion for helping others and solving problems</li>
+                    </ul>
+                    
+                    <h4>Benefits:</h4>
+                    <ul>
+                        <li>Competitive commission structure with uncapped earning potential</li>
+                        <li>Performance bonuses and incentives</li>
+                        <li>Comprehensive training and development</li>
+                        <li>Leads and marketing support</li>
+                        <li>Advanced technology platform</li>
+                    </ul>
+                </div>
+                
+                <div class="details">
+                    <span>Full-time</span>
+                    <span>Commission-based</span>
+                    <span>Remote/In-office options</span>
+                </div>
+                <a href="#apply" class="apply-now">Apply Now</a>
+            </div>
+            <div class="position-card">
+                <h3>Appointment Setter</h3>
+                <p>Drive the sales process by connecting potential clients with our insurance producers through effective phone and digital communication.</p>
+                
+                <div class="position-description">
+                    <h4>Responsibilities:</h4>
+                    <ul>
+                        <li>Contact potential clients through outbound calling and digital platforms</li>
+                        <li>Qualify leads based on specific criteria</li>
+                        <li>Schedule appointments for insurance producers</li>
+                        <li>Maintain detailed records of calls and contacts</li>
+                        <li>Achieve daily and weekly appointment setting goals</li>
+                        <li>Provide excellent customer service in all interactions</li>
+                    </ul>
+                    
+                    <h4>Qualifications:</h4>
+                    <ul>
+                        <li>Previous call center or telemarketing experience preferred</li>
+                        <li>Excellent phone presence and communication skills</li>
+                        <li>Persuasive with a positive attitude</li>
+                        <li>Goal-oriented and resilient</li>
+                        <li>Basic computer skills</li>
+                        <li>Ability to follow scripts while maintaining natural conversation</li>
+                    </ul>
+                    
+                    <h4>Benefits:</h4>
+                    <ul>
+                        <li>Competitive base pay plus appointment bonuses</li>
+                        <li>Opportunity to advance to producer role</li>
+                        <li>Comprehensive training program</li>
+                        <li>Supportive team environment</li>
+                        <li>Flexible scheduling options</li>
+                    </ul>
+                </div>
+                
+                <div class="details">
+                    <span>Full-time/Part-time</span>
+                    <span>Base + Bonuses</span>
+                    <span>Remote Available</span>
+                </div>
+                <a href="#apply" class="apply-now">Apply Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Hear From Our Team</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"I joined JANISSARIES with no insurance experience, and their training program gave me everything I needed to succeed. In my first year, I exceeded my income goals by 30% and have continued to grow my book of business each year."</p>
+                <div class="author">Sarah Johnson</div>
+                <div class="position">Senior Insurance Producer, 4 years</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Starting as an appointment setter gave me valuable insight into the insurance industry. The team supported my growth, and within a year, I transitioned to a producer role. The commission structure and leadership here are unmatched."</p>
+                <div class="author">Michael Chen</div>
+                <div class="position">Insurance Producer, Former Appointment Setter</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"The flexibility at JANISSARIES has allowed me to build my business while being present for my family. I've learned that success in insurance isn't just about sales skills - it's about genuinely helping people protect what matters most."</p>
+                <div class="author">James Rodriguez</div>
+                <div class="position">Insurance Producer, 5 years</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-us" id="about">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2>Our Legacy</h2>
+                <p>Founded on principles of integrity and exceptional service, JANISSARIES Insurance Agency has been protecting what matters most to our clients for over two decades.</p>
+                <p>Our mission is simple: provide peace of mind through comprehensive insurance solutions delivered by professionals who truly care about the people they serve.</p>
+                <p>When you join JANISSARIES, you become part of a legacy committed to excellence in everything we do. We believe in investing in our team members and providing them with the tools, training, and support needed to build successful insurance careers.</p>
+            </div>
+            <div class="about-image">
+                <img src="/api/placeholder/500/300" alt="JANISSARIES office">
+            </div>
+        </div>
+    </section>
+    
+    <section class="application-form" id="apply">
+        <h2 class="section-title">Apply Now</h2>
+        <div class="form-container">
+            <div id="form-status" class="form-status"></div>
+           <form action="https://formsubmit.co/torayev.biz@gmail.com" method="POST">
+                <!-- FormSubmit required fields -->
+                <input type="hidden" name="_subject" value="New JANISSARIES Job Application">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://janissariesx.com/thank-you.html">
+                
+                <div class="form-group">
+                    <label for="position">Position of Interest</label>
+                    <select class="form-control" id="position" name="position" required>
+                        <option value="">Select a position</option>
+                        <option value="Insurance Producer">Insurance Producer</option>
+                        <option value="Appointment Setter">Appointment Setter</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Years of Relevant Experience</label>
+                    <select class="form-control" id="experience" name="experience">
+                        <option value="0-1">0-1 years</option>
+                        <option value="1-3">1-3 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="5+">5+ years</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="insurance-license">Do you currently hold an insurance license?</label>
+                    <select class="form-control" id="insurance-license" name="insurance_license">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="in-progress">In Progress</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="resume">Upload Resume</label>
+                    <input type="file" class="form-control" id="resume" name="resume">
+                </div>
+                <div class="form-group">
+                    <label for="message">Why do you want to join JANISSARIES? (Optional)</label>
+                    <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Application</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>JANISSARIES</h3>
+                <p>Building a legacy of protection and trust in the insurance industry.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Careers</h3>
+                <ul>
+                    <li><a href="#careers">Current Openings</a></li>
+                    <li><a href="#apply">Application Process</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="mailto:Htorayev@janissariesx.com">Htorayev@janissariesx.com</a></li>
+                    <li><a href="tel:+14129251282">+1(412)925-1282</a></li>
+                    <li><a href="#">150 Lake Drive, Wexford, PA 15090</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 JANISSARIES Insurance Agency. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Form submission handling if needed
+        // The form will submit naturally to FormSubmit service
+    </script>
+</body>
+</html>
